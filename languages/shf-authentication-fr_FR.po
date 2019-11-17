@@ -1,0 +1,69 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: shf-authentication\n"
+"POT-Creation-Date: 2019-11-17 16:26+0100\n"
+"PO-Revision-Date: 2019-11-17 16:30+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: adminPlugin.php:10
+msgid "SHF authentication settings"
+msgstr "Paramètres de l'authentification SHH"
+
+#: adminPlugin.php:10 adminPlugin.php:24
+msgid "SHF authentication"
+msgstr "Authentification SHF"
+
+#: adminPlugin.php:27
+msgid "Secret manager"
+msgstr "Manager de secret"
+
+#: adminPlugin.php:30
+msgid "Secret reseted"
+msgstr "Secret réinitialisé"
+
+#: adminPlugin.php:33
+msgid ""
+"Warning : with this reset of secret, all connected users need to reconnect "
+"them."
+msgstr ""
+"Attention : avec cet réinitialisation de secret, tous les utilisateurs "
+"devront se reconnecter."
+
+#: adminPlugin.php:35
+msgid "Reset secret"
+msgstr "Réinitialisation de secret"
+
+#: shfConnector.php:12
+msgid "login failed"
+msgstr "échec d'authentification"
+
+#: template/loginForm.php:1
+msgid "Restricted content"
+msgstr "Contenu restreint"
+
+#: template/loginForm.php:2
+msgid "This content required a SHF valid subscribe for selle Francais. "
+msgstr ""
+"Ce contenu demande un valide abonnement aux selles Francais sur la SHF."
+
+#: template/loginForm.php:11
+msgid "login"
+msgstr "login"
+
+#: template/loginForm.php:15
+msgid "password"
+msgstr "mot de passe"
+
+#: template/loginForm.php:18
+msgid "connection"
+msgstr "connexion"

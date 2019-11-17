@@ -1,0 +1,46 @@
+
+
+/**
+* global fieldset 
+*/
+.wp-shf-authentication-plugin-admin fieldset {
+    border: 1px solid #39c;
+    border-radius:8px;	
+    margin: 10px;
+    padding: 10px;
+}
+
+.wp-shf-authentication-plugin-admin fieldset legend {
+    margin-left: 10px;
+}
+
+/**
+* Messages 
+*/
+.wp-shf-authentication-plugin-admin .errors{
+    color : red;
+}
+.wp-shf-authentication-plugin-admin .reseted{
+    color : green;
+    display: block;
+}
+.wp-shf-authentication-plugin-admin .warning::before{
+    color : orange;
+}
+
+.wp-shf-authentication-plugin-admin .info::before{
+    color : #39c;
+}
+
+.wp-shf-authentication-plugin-admin .fas::before{
+    padding-right: 5px;
+    font-size: 1.5em;
+}
+.wp-shf-authentication-plugin-admin .messages li{
+    display: list-item;
+}
+
+.wp-shf-authentication-plugin-admin input[type=submit]{
+    margin-top: 10px;
+}
+
