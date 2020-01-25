@@ -19,6 +19,7 @@ class AdminPluginSHFAuthentication{
 
     public function displaySettingPage(){
         $reseted = $this->resetPasswordIfAsked();
+        $saved = $this->saveShfConnectionInformation();
         ?>
         <div class="wrap wp-shf-authentication-plugin-admin">
             <h1><?php _e("SHF authentication", 'shf-authentication'); ?></h1>  
@@ -36,6 +37,36 @@ class AdminPluginSHFAuthentication{
                 </fieldset>
 
             </form> 
+
+            <form method="post">
+                <fieldset>
+                    <legend><?php _e("SHF connection", 'shf-authentication'); ?></legend>
+                    <div class="messages">
+                        <?php if($saved){ ?>
+                            <span class="fas fa-check reseted"><?php _e("saved", 'shf-authentication'); ?></span>
+                        <?php } ?>
+                    </div>
+
+                    <div>
+                        <label ref="host"><?php _e("host", 'shf-authentication'); ?></label>
+                        <input id="host" placeholder="shf.fr" name="host" value="<?php echo get_option( 'shf_host' ); ?>" /> 
+                    </div>
+                    <div>
+                        <label ref="key-api"><?php _e("key-api", 'shf-authentication'); ?></label>
+                        <input id="key-api" placeholder="myApiKey"  name="key" value="<?php echo get_option( 'shf_key' ); ?>" /> 
+                    </div>
+                    <div>
+                        <label ref="key-secret"><?php _e("key-secret", 'shf-authentication'); ?></label>
+                        <input id="key-secret" placeholder="myApiSecrEt" name="secret" value="<?php echo get_option( 'shf_secret' ); ?>" /> 
+                    </div>
+                    <div>
+                        <label ref="redirect"><?php _e("redirect link", 'shf-authentication'); ?></label>
+                        <input id="redirect" placeholder="https://www.shf.com/mesAdhesion" name="redirect" value="<?php echo get_option( 'shf_redirect' ); ?>" /> 
+                    </div>
+                    <input type="submit" class="button-primary" value="<?php _e("save", 'shf-authentication'); ?>" name="save-information" />                
+                </fieldset>
+
+            </form> 
         </div>
         <?php
 
@@ -49,6 +80,26 @@ class AdminPluginSHFAuthentication{
             $reseted = true;
         }
         return $reseted;
+    }
+
+    private function saveShfConnectionInformation(){
+        $saved = false;
+        if(isset($_POST["save-information"])){
+            $this->defineOption('shf_host', $_POST["host"]);
+            $this->defineOption('shf_key', $_POST["key"]);
+            $this->defineOption('shf_secret', $_POST["secret"]);
+            $this->defineOption('shf_redirect', $_POST["redirect"]);
+            $saved = true;
+        }
+        return $saved;
+    }
+
+    private function defineOption($name, $value){
+        if(!get_option($name)){
+            add_option( $name, $value );
+        }else{
+            update_option( $name, $value );
+        }
     }
 }
 ?>

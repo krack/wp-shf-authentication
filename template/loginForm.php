@@ -1,6 +1,6 @@
 <div class="shf-authentication-login">
     <h2><?php _e("Restricted content", "shf-authentication") ?></p>
-    <p><?php _e("This content required a SHF valid subscribe for selle Francais. ", "shf-authentication") ?></p>
+    <p><?php _e("This content required a SHF valid subscribe for selle Francais.", "shf-authentication") ?></p>
 
     <form method="post"> 
         <ul class="errors">
@@ -9,7 +9,7 @@
         <?php } ?>
         </ul>
         <div>
-            <label for="login"><?php _e("login", "shf-authentication") ?></label>
+            <label for="login"><?php _e("email", "shf-authentication") ?></label>
             <input type="text" id="login" name="login"/>
         </div>
         <div>

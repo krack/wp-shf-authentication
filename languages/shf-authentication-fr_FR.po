@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: shf-authentication\n"
-"POT-Creation-Date: 2019-11-17 16:26+0100\n"
-"PO-Revision-Date: 2019-11-17 16:30+0100\n"
+"POT-Creation-Date: 2020-01-25 14:30+0100\n"
+"PO-Revision-Date: 2020-01-25 14:30+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -19,19 +19,19 @@ msgstr ""
 msgid "SHF authentication settings"
 msgstr "Paramètres de l'authentification SHH"
 
-#: adminPlugin.php:10 adminPlugin.php:24
+#: adminPlugin.php:10 adminPlugin.php:25
 msgid "SHF authentication"
 msgstr "Authentification SHF"
 
-#: adminPlugin.php:27
+#: adminPlugin.php:28
 msgid "Secret manager"
 msgstr "Manager de secret"
 
-#: adminPlugin.php:30
+#: adminPlugin.php:31
 msgid "Secret reseted"
 msgstr "Secret réinitialisé"
 
-#: adminPlugin.php:33
+#: adminPlugin.php:34
 msgid ""
 "Warning : with this reset of secret, all connected users need to reconnect "
 "them."
@@ -39,31 +39,68 @@ msgstr ""
 "Attention : avec cet réinitialisation de secret, tous les utilisateurs "
 "devront se reconnecter."
 
-#: adminPlugin.php:35
+#: adminPlugin.php:36
 msgid "Reset secret"
 msgstr "Réinitialisation de secret"
 
-#: shfConnector.php:12
+#: adminPlugin.php:43
+msgid "SHF connection"
+msgstr "connexion SHF"
+
+#: adminPlugin.php:46
+msgid "saved"
+msgstr "sauvegarder"
+
+#: adminPlugin.php:51
+msgid "host"
+msgstr "hôte"
+
+#: adminPlugin.php:55
+msgid "key-api"
+msgstr "key-api"
+
+#: adminPlugin.php:59
+msgid "key-secret"
+msgstr "key-secret"
+
+#: adminPlugin.php:63
+msgid "redirect link"
+msgstr "lien de redirection"
+
+#: adminPlugin.php:66
+msgid "save"
+msgstr "sauvegarder"
+
+#: shfConnector.php:19
 msgid "login failed"
 msgstr "échec d'authentification"
 
-#: template/loginForm.php:1
+#: shfConnector.php:27
+#, php-format
+msgid ""
+"You don't have a valid membership. <a href=\"%s\">Check your shf account</a>"
+msgstr ""
+"Vous n'avez pas d’adhésion valide.  <a href=\"%s\">Vérifiez votre compte "
+"shf</a>"
+
+#: template/loginForm.php:2
 msgid "Restricted content"
 msgstr "Contenu restreint"
 
-#: template/loginForm.php:2
-msgid "This content required a SHF valid subscribe for selle Francais. "
+#: template/loginForm.php:3
+msgid "This content required a SHF valid subscribe for selle Francais."
 msgstr ""
 "Ce contenu demande un valide abonnement aux selles Francais sur la SHF."
 
-#: template/loginForm.php:11
-msgid "login"
-msgstr "login"
+#: template/loginForm.php:12
+msgid "email"
+msgstr "email"
 
-#: template/loginForm.php:15
+#: template/loginForm.php:16
 msgid "password"
 msgstr "mot de passe"
 
-#: template/loginForm.php:18
+#: template/loginForm.php:19
 msgid "connection"
 msgstr "connexion"
+
