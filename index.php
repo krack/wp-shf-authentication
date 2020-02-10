@@ -26,6 +26,9 @@ add_action( 'admin_menu', 'configure_admin_menu_sfh_authentication' );
 wp_register_style( 'custom-style-shf-authentication', plugins_url( "/css/login.css", __FILE__ ), array(), null, 'all' );
 wp_enqueue_style( 'custom-style-shf-authentication' );
 
+
+wp_enqueue_script( 'shf-authentifcation-login', plugins_url( "/js/".'login.js', __FILE__ ), array(), null, true);
+
 function shf_authentication_plugin_textdomain() {
 	load_plugin_textdomain( 'shf-authentication', FALSE, basename( dirname( __FILE__ ) ) . "/languages/" );
 }
@@ -58,11 +61,32 @@ function shf_connected_block(){
     }
 
     if(!$connected){
-        include "template/loginForm.php";
+        include "template/connectionMessage.php";
     }
     return $connected;
 }
 
+function shf_login_block(){
+    global $connectionStatus;
+    $connected = false;
+
+    //get valid message
+    if(isset($_POST["login"])){
+        $authentificator = new Authentificator();
+        $connectionStatus = $authentificator->tryConnection($_POST["login"], $_POST["password"]);
+    }
+    
+    if($connectionStatus->connected){
+        $connected = true;
+    }else{
+        $authentificator = new Authentificator();
+        $connected = $authentificator->isConnected();
+    }
+
+    if(!$connected){
+        include "template/loginForm.php";
+    }
+}
 
 
 ?>

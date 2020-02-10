@@ -1,4 +1,26 @@
-.shf-authentication-login{
+.shf-authentication-login {
     display: inline-block;
     width: 100%;
+}
+
+.shf-authentication-login {
+    display: none;
+}
+
+.shf-authentication-login label, .shf-authentication-login input {
+    display: block;
+    margin: auto;
+}
+
+.shf-authentication-login input {
+    margin-bottom: 20px;
+}
+
+.shf-authentication-login-in-error {
+    display: block;
+}
+
+.shf-authentication-login .errors li::before {
+    margin-right: 5px;
+    color: red;
 }

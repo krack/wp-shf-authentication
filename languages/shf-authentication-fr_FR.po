@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: shf-authentication\n"
-"POT-Creation-Date: 2020-01-25 14:30+0100\n"
-"PO-Revision-Date: 2020-01-25 14:30+0100\n"
+"POT-Creation-Date: 2020-02-08 18:48+0100\n"
+"PO-Revision-Date: 2020-02-08 18:48+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -83,24 +83,36 @@ msgstr ""
 "Vous n'avez pas d’adhésion valide.  <a href=\"%s\">Vérifiez votre compte "
 "shf</a>"
 
-#: template/loginForm.php:2
-msgid "Restricted content"
-msgstr "Contenu restreint"
-
-#: template/loginForm.php:3
-msgid "This content required a SHF valid subscribe for selle Francais."
+#: template/connectionMessage.php:2
+msgid "Log in<br /> to learn more"
 msgstr ""
-"Ce contenu demande un valide abonnement aux selles Francais sur la SHF."
+"Connectez-vous<br />\n"
+"pour en savoir plus"
 
-#: template/loginForm.php:12
-msgid "email"
-msgstr "email"
+#: template/loginForm.php:2 template/loginForm.php:18
+msgid "Connection"
+msgstr "Connexion"
 
-#: template/loginForm.php:16
-msgid "password"
-msgstr "mot de passe"
+#: template/loginForm.php:11
+msgid "Login"
+msgstr "Identifiant"
 
-#: template/loginForm.php:19
-msgid "connection"
-msgstr "connexion"
+#: template/loginForm.php:15
+msgid "Password"
+msgstr "Mot de passe"
 
+#~ msgid "Restricted content"
+#~ msgstr "Contenu restreint"
+
+#~ msgid "This content required a SHF valid subscribe for selle Francais."
+#~ msgstr ""
+#~ "Ce contenu demande un valide abonnement aux selles Francais sur la SHF."
+
+#~ msgid "email"
+#~ msgstr "email"
+
+#~ msgid "toto"
+#~ msgstr "tata"
+
+#~ msgid "Marina nue"
+#~ msgstr "Amandine nue"
