@@ -20,7 +20,36 @@
     display: block;
 }
 
+.shf-authentication-login .errors {
+    padding: 0;
+}
+
 .shf-authentication-login .errors li::before {
     margin-right: 5px;
     color: red;
+}
+
+.shf-authentication-login p {
+    margin: auto !important;
+    text-align: center;
+}
+
+.shf-disconnected, .shf-disconnected>* {
+    color: lightgray;
+    cursor: default;
+}
+
+.shf-authentication-login-fixed-button {
+    position: fixed;
+    top: 10%;
+    right: 0;
+    border: none;
+    padding: 5px 50px 5px 20px;
+    font-size: 1.5em;
+}
+
+@media only screen and (max-width: 959px) {
+    .shf-authentication-login-fixed-button {
+        display: none;
+    }
 }

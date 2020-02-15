@@ -1,6 +1,8 @@
 <div class="shf-authentication-login <?php if(count($connectionStatus->errors) > 0) { echo "shf-authentication-login-in-error"; } ?>">
     <h1><?php _e("Connection", "shf-authentication") ?></h1>
     <div class="highlighted">
+
+        <p><?php _e("Thanks to your Selle Français membership, benefit from the full expertise of the experts as well as photos and videos of the stallions by logging in with your SHF credentials.", "shf-authentication") ?></p>
         <form method="post"> 
             <ul class="errors">
             <?php foreach($connectionStatus->errors as $error){ ?>

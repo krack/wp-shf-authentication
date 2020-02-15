@@ -89,4 +89,47 @@ function shf_login_block(){
 }
 
 
+function shf_connected_class(){
+    global $connectionStatus;
+    $connected = false;
+
+    //get valid message
+    if(isset($_POST["login"])){
+        $authentificator = new Authentificator();
+        $connectionStatus = $authentificator->tryConnection($_POST["login"], $_POST["password"]);
+    }
+    
+    if($connectionStatus->connected){
+        $connected = true;
+    }else{
+        $authentificator = new Authentificator();
+        $connected = $authentificator->isConnected();
+    }
+
+    if(!$connected){
+        echo "shf-disconnected";
+    }
+}
+
+function shf_add_fixed_connection_button(){
+    global $connectionStatus;
+    $connected = false;
+
+    //get valid message
+    if(isset($_POST["login"])){
+        $authentificator = new Authentificator();
+        $connectionStatus = $authentificator->tryConnection($_POST["login"], $_POST["password"]);
+    }
+    
+    if($connectionStatus->connected){
+        $connected = true;
+    }else{
+        $authentificator = new Authentificator();
+        $connected = $authentificator->isConnected();
+    }
+
+    if(!$connected){
+        include "template/connectionFixedButton.php";
+    }
+}
 ?>
