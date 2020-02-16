@@ -48,7 +48,7 @@ class Authentificator{
 
     private function createConnectionRemember(){
         $userId = 12;
-        $expiration = time() + 3600;
+        $expiration = time() + (7 *24 * 60 * 60); //7j
         $issuer = 'authentication_shf';
         
         $token = Token::create($userId, $this->secret, $expiration, $issuer);
