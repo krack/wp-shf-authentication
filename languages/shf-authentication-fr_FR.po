@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: shf-authentication\n"
-"POT-Creation-Date: 2020-02-14 19:45+0100\n"
-"PO-Revision-Date: 2020-02-14 19:45+0100\n"
+"POT-Creation-Date: 2020-02-17 22:20+0100\n"
+"PO-Revision-Date: 2020-02-17 22:20+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -73,15 +73,19 @@ msgstr "sauvegarder"
 
 #: shfConnector.php:19
 msgid "login failed"
-msgstr "échec d'authentification"
+msgstr "Identifiant ou Mot de Passe incorrect"
 
 #: shfConnector.php:27
 #, php-format
 msgid ""
 "You don't have a valid membership. <a href=\"%s\">Check your shf account</a>"
-msgstr ""
-"Vous n'avez pas d’adhésion valide.  <a href=\"%s\">Vérifiez votre compte "
-"shf</a>"
+msgstr "<a href=\"%s\">Vérifiez votre adhésion au Stud Book Selle Français</a>"
+
+#: template/connectionFixedButton.php:2
+#, fuzzy
+#| msgid "Connection"
+msgid "Connexion"
+msgstr "Connexion"
 
 #: template/connectionMessage.php:2
 msgid "Log in<br /> to learn more"

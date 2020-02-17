@@ -24,6 +24,10 @@
     padding: 0;
 }
 
+.shf-authentication-login a {
+    color: white;
+}
+
 .shf-authentication-login .errors li::before {
     margin-right: 5px;
     color: red;
