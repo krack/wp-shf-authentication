@@ -34,7 +34,6 @@ function shf_authentication_plugin_textdomain() {
 }
 add_action( 'plugins_loaded', 'shf_authentication_plugin_textdomain' );
 
-
 // connection 
 $connectionStatus = new ConnectionStatus();
 // register connection
@@ -132,4 +131,39 @@ function shf_add_fixed_connection_button(){
         include "template/connectionFixedButton.php";
     }
 }
+
+
+/**
+ * protect media with change of path
+ */
+
+function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+
+function changePathToProtect($attachment_ID)
+{          
+    $oldFilePath = get_attached_file($attachment_ID); // Gets path to attachment
+
+    $path_parts = pathinfo($oldFilePath);
+
+    if(strtolower($path_parts['extension']) == "mp4"){
+        $random = generateRandomString();
+        $newfilePath = $path_parts['dirname'].'/'.$random.'/'.$path_parts['basename'];  
+
+        mkdir($path_parts['dirname'].'/'.$random.'/', 0777);
+        rename( $oldFilePath, $newfilePath);
+        update_attached_file( $attachment_ID, $newfilePath );
+    }
+   
+}
+add_action("add_attachment", 'changePathToProtect');
+add_action("edit_attachment", 'changePathToProtect');
+
 ?>
