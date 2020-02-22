@@ -24,7 +24,7 @@ class SHFConnector{
 
     private function getMessageCheckAccount(){
         $link = get_option( 'shf_redirect' );
-        return sprintf(__("You don't have a valid membership. <a href=\"%s\">Check your shf account</a>", "shf-authentication"), $link); 
+        return sprintf(__("<a target=\"_blank\" href=\"%s\">Check your membership to the Selle Français Stud Book</a>", "shf-authentication"), $link); 
     }
     private function check($login, $password){
         $client = new \GuzzleHttp\Client();

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: shf-authentication\n"
-"POT-Creation-Date: 2020-02-17 22:20+0100\n"
-"PO-Revision-Date: 2020-02-17 22:20+0100\n"
+"POT-Creation-Date: 2020-02-19 18:40+0100\n"
+"PO-Revision-Date: 2020-02-19 18:41+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -78,8 +78,11 @@ msgstr "Identifiant ou Mot de Passe incorrect"
 #: shfConnector.php:27
 #, php-format
 msgid ""
-"You don't have a valid membership. <a href=\"%s\">Check your shf account</a>"
-msgstr "<a href=\"%s\">Vérifiez votre adhésion au Stud Book Selle Français</a>"
+"<a target=\"_blank\" href=\"%s\">Check your membership to the Selle Français "
+"Stud Book</a>"
+msgstr ""
+"<a target=\"_blank\" href=\"%s\">Vérifiez votre adhésion au Stud Book Selle "
+"Français</a>"
 
 #: template/connectionFixedButton.php:2
 #, fuzzy
@@ -115,18 +118,19 @@ msgstr "Identifiant"
 msgid "Password"
 msgstr "Mot de passe"
 
+#, fuzzy
+#~| msgid ""
+#~| "You don't have a valid membership. <a href=\"%s\">Check your shf "
+#~| "account</a>"
+#~ msgid ""
+#~ "You don't have a valid membership. <a target=\"_blank\" href=\"%s\">Check "
+#~ "your shf account</a>"
+#~ msgstr ""
+#~ "<a href=\"%s\">Vérifiez votre adhésion au Stud Book Selle Français</a>"
+
 #~ msgid "Restricted content"
 #~ msgstr "Contenu restreint"
 
 #~ msgid "This content required a SHF valid subscribe for selle Francais."
 #~ msgstr ""
 #~ "Ce contenu demande un valide abonnement aux selles Francais sur la SHF."
-
-#~ msgid "email"
-#~ msgstr "email"
-
-#~ msgid "toto"
-#~ msgstr "tata"
-
-#~ msgid "Marina nue"
-#~ msgstr "Amandine nue"
