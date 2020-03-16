@@ -42,7 +42,7 @@ if(isset($_POST["login"])){
     $connectionStatus = $authentificator->tryConnection($_POST["login"], $_POST["password"]);
 }
 
-function shf_connected_block(){
+function shf_connected_block($displayLogin = true){
     global $connectionStatus;
     $connected = false;
 
@@ -59,7 +59,7 @@ function shf_connected_block(){
         $connected = $authentificator->isConnected();
     }
 
-    if(!$connected){
+    if(!$connected && $displayLogin){
         include "template/connectionMessage.php";
     }
     return $connected;
