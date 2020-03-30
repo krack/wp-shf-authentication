@@ -6,7 +6,7 @@
  * Plugin URI: 
  * Description: Possibility for checking is user is subscribe at SHF services.
  * Author: Sylvain Gandon
- * Version: 0.1
+ * Version: 0.2
  * Author URI: 
 */
 require 'vendor/autoload.php';

@@ -24,7 +24,9 @@ class SHFConnector{
 
     private function getMessageCheckAccount(){
         $link = get_option( 'shf_redirect' );
-        return sprintf(__("<a target=\"_blank\" href=\"%s\">Check your membership to the Selle Français Stud Book</a>", "shf-authentication"), $link); 
+
+        $currentYear = date("Y");
+        return sprintf(__("error.membership", "shf-authentication"), $link, $currentYear-1, $currentYear); 
     }
     private function check($login, $password){
         $client = new \GuzzleHttp\Client();
@@ -46,7 +48,9 @@ class SHFConnector{
         }
 
         $test = json_decode($response->getBody());
-        if($test->code_retour != 0){
+        if($test->code_retour == 4 && $test->retour == "Utilisateur non adhérent" ){
+            return false;
+        } else if($test->code_retour != 0){
             throw new Exception('user_error');
 
         }
