@@ -46,11 +46,11 @@ function shf_connected_block($displayLogin = true){
     global $connectionStatus;
     $connected = false;
 
-    //get valid message
+    /*//get valid message
     if(isset($_POST["login"])){
         $authentificator = new Authentificator();
         $connectionStatus = $authentificator->tryConnection($_POST["login"], $_POST["password"]);
-    }
+    }*/
     
     if($connectionStatus->connected){
         $connected = true;
@@ -69,11 +69,11 @@ function shf_login_block(){
     global $connectionStatus;
     $connected = false;
 
-    //get valid message
+   /* //get valid message
     if(isset($_POST["login"])){
         $authentificator = new Authentificator();
         $connectionStatus = $authentificator->tryConnection($_POST["login"], $_POST["password"]);
-    }
+    }*/
     
     if($connectionStatus->connected){
         $connected = true;
@@ -92,11 +92,11 @@ function shf_connected_class(){
     global $connectionStatus;
     $connected = false;
 
-    //get valid message
+   /* //get valid message
     if(isset($_POST["login"])){
         $authentificator = new Authentificator();
         $connectionStatus = $authentificator->tryConnection($_POST["login"], $_POST["password"]);
-    }
+    }*/
     
     if($connectionStatus->connected){
         $connected = true;
@@ -115,10 +115,10 @@ function shf_add_fixed_connection_button(){
     $connected = false;
 
     //get valid message
-    if(isset($_POST["login"])){
+   /* if(isset($_POST["login"])){
         $authentificator = new Authentificator();
         $connectionStatus = $authentificator->tryConnection($_POST["login"], $_POST["password"]);
-    }
+    }*/
     
     if($connectionStatus->connected){
         $connected = true;
@@ -165,5 +165,14 @@ function changePathToProtect($attachment_ID)
 }
 add_action("add_attachment", 'changePathToProtect');
 add_action("edit_attachment", 'changePathToProtect');
+function protectedBlock($atts, $content){
+    if(shf_connected_block(false)){
+        return $content;
+    }else{
+        return '';
+    }
+}
+
+add_shortcode('protected', 'protectedBlock');
 
 ?>

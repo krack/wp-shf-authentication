@@ -52,7 +52,7 @@ class Authentificator{
         $issuer = 'authentication_shf';
         
         $token = Token::create($userId, $this->secret, $expiration, $issuer);
-        setcookie($this->coockieName,$token, $expiration);
+        setcookie($this->coockieName,$token, $expiration, "/");
     } 
 }
 ?>
