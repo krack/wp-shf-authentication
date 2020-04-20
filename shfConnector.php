@@ -2,7 +2,7 @@
 
 class SHFConnector{
 
-
+    private static $response = null;
     public function isValidLoginPassword($login, $password){
         $connectionStatus = new ConnectionStatus();
         $isValidAccount = false;
@@ -29,25 +29,29 @@ class SHFConnector{
         return sprintf(__("error.membership", "shf-authentication"), $link, $currentYear-1, $currentYear); 
     }
     private function check($login, $password){
-        $client = new \GuzzleHttp\Client();
-        $host= get_option( 'shf_host' );
-        $key= get_option( 'shf_key' );
-        $secret= get_option( 'shf_secret' );
-        $response = $client->request('POST', 'https://'.$host.'/fr/webservice/login.html', 
-        [
-            'form_params' => [
-                'key-api' => $key,
-                'key-secret' => $secret,
-                'email' => $login,
-                'password' => $password
-            ]
-        ]);
+       
+        if(SHFConnector::$response == null){
+            $client = new \GuzzleHttp\Client();
+            $host= get_option( 'shf_host' );
+            $key= get_option( 'shf_key' );
+            $secret= get_option( 'shf_secret' );
+            $response = $client->request('POST', 'https://'.$host.'/fr/webservice/login.html', 
+            [
+                'form_params' => [
+                    'key-api' => $key,
+                    'key-secret' => $secret,
+                    'email' => $login,
+                    'password' => $password
+                ]
+            ]);
+            SHFConnector::$response = $response;
+        }
         
-        if($response->getStatusCode() != 200){
+        if(SHFConnector::$response->getStatusCode() != 200){
             throw new Exception('http_error');
         }
 
-        $test = json_decode($response->getBody());
+        $test = json_decode(SHFConnector::$response->getBody());
         if($test->code_retour == 4 && $test->retour == "Utilisateur non adhérent" ){
             return false;
         } else if($test->code_retour != 0){

@@ -46,11 +46,11 @@ function shf_connected_block($displayLogin = true){
     global $connectionStatus;
     $connected = false;
 
-    /*//get valid message
+    //get valid message
     if(isset($_POST["login"])){
         $authentificator = new Authentificator();
         $connectionStatus = $authentificator->tryConnection($_POST["login"], $_POST["password"]);
-    }*/
+    }
     
     if($connectionStatus->connected){
         $connected = true;
@@ -60,6 +60,7 @@ function shf_connected_block($displayLogin = true){
     }
 
     if(!$connected && $displayLogin){
+        $message = __("Log in<br /> to learn more", "shf-authentication");
         include "template/connectionMessage.php";
     }
     return $connected;
@@ -69,11 +70,11 @@ function shf_login_block(){
     global $connectionStatus;
     $connected = false;
 
-   /* //get valid message
+   //get valid message
     if(isset($_POST["login"])){
         $authentificator = new Authentificator();
         $connectionStatus = $authentificator->tryConnection($_POST["login"], $_POST["password"]);
-    }*/
+    }
     
     if($connectionStatus->connected){
         $connected = true;
@@ -92,11 +93,11 @@ function shf_connected_class(){
     global $connectionStatus;
     $connected = false;
 
-   /* //get valid message
+   //get valid message
     if(isset($_POST["login"])){
         $authentificator = new Authentificator();
         $connectionStatus = $authentificator->tryConnection($_POST["login"], $_POST["password"]);
-    }*/
+    }
     
     if($connectionStatus->connected){
         $connected = true;
@@ -115,10 +116,10 @@ function shf_add_fixed_connection_button(){
     $connected = false;
 
     //get valid message
-   /* if(isset($_POST["login"])){
+   if(isset($_POST["login"])){
         $authentificator = new Authentificator();
         $connectionStatus = $authentificator->tryConnection($_POST["login"], $_POST["password"]);
-    }*/
+    }
     
     if($connectionStatus->connected){
         $connected = true;
@@ -165,11 +166,23 @@ function changePathToProtect($attachment_ID)
 }
 add_action("add_attachment", 'changePathToProtect');
 add_action("edit_attachment", 'changePathToProtect');
+
+function return_output($file, $message){
+    ob_start();
+    include $file;
+    return ob_get_clean();
+}
 function protectedBlock($atts, $content){
+    $atts = shortcode_atts(array('visible' => false, 'message' => __("Log in<br /> to learn more", "shf-authentication")), $atts);
     if(shf_connected_block(false)){
         return $content;
     }else{
-        return '';
+        if($atts["visible"]=="true"){
+            $message = $atts["message"];
+            return return_output("template/connectionMessage.php", $message);
+        }else{
+            return '';
+        }
     }
 }
 
