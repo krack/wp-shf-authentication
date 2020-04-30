@@ -154,7 +154,7 @@ function changePathToProtect($attachment_ID)
 
     $path_parts = pathinfo($oldFilePath);
 
-    if(strtolower($path_parts['extension']) == "mp4"){
+    if(strtolower($path_parts['extension']) == "mp4" || strtolower($path_parts['extension']) == "pdf"){
         $random = generateRandomString();
         $newfilePath = $path_parts['dirname'].'/'.$random.'/'.$path_parts['basename'];  
 
@@ -173,14 +173,18 @@ function return_output($file, $message){
     return ob_get_clean();
 }
 function protectedBlock($atts, $content){
-    $atts = shortcode_atts(array('visible' => false, 'message' => __("Log in<br /> to learn more", "shf-authentication")), $atts);
+    $atts = shortcode_atts(array('visible' => false, 'message' => __("Log in<br /> to learn more", "shf-authentication"), 'class'=>''), $atts);
     if(shf_connected_block(false)){
         return $content;
     }else{
         if($atts["visible"]=="true"){
             $message = $atts["message"];
             return return_output("template/connectionMessage.php", $message);
-        }else{
+        }elseif($atts["class"] != ''){
+           
+            return '<div class="'.$atts["class"].' openLoginButton"></div>';
+        }
+        else{
             return '';
         }
     }
