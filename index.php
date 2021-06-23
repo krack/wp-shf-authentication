@@ -190,6 +190,6 @@ function protectedBlock($atts, $content){
     }
 }
 
-add_shortcode('protected', 'protectedBlock');
+add_shortcode('protectedESF', 'protectedBlock');
 
 ?>
