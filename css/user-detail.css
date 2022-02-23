@@ -1,0 +1,362 @@
+
+.page-id-349 #main-header, .page-id-349 footer{ 
+	display: none; 
+}
+
+.page-id-349 #page-container{
+	padding-top: 0px !important;
+	margin-top: -1px !important;
+}
+
+body.page-id-349{
+    background-color: #666 !important;
+    color: white;
+    font-family: Fira sans;
+    font-style: italic;
+    background-blend-mode: hard-light;
+    background-image: url(/wp-content/uploads/2021/07/coding-background-texture.jpg),
+    linear-gradient(180deg,#213b7f 0%,#172655 100%) !important;
+    background-repeat: no-repeat;
+}
+#profile_page{
+    margin-left: auto;
+
+    margin-right: auto;
+    margin-top: 30px;
+    width: max-content;
+}
+
+#profile_page h2, #profile_page h3{
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+#profile_page h2{
+    font-size: 3.5em ;
+}
+#profile_page img.profil{
+    max-width: 150px;
+    float: left;
+    margin: 0;
+    width: 25%;
+    border-radius: 10px;
+    
+}
+#profile_page .fields{
+    display: inline-block;
+}
+#profile_page > div{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+
+#profile_page > div.info{
+
+    margin-right: 0;
+   
+}
+
+#profile_page > div label{
+    text-transform: capitalize;
+    margin-left: 25px;
+    font-style: italic;
+
+}
+#profile_page  >  div label:after{
+    content: ' : ';
+}
+#profile_page span{
+
+    font-weight: 600;
+}
+
+#profile_page .level{
+    clear: both;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+#profile_page .diplomes{
+    clear: both;
+    text-align: center;
+
+}
+#profile_page a.diplome, #profile_page span.diplome{
+    color: white;
+    text-decoration: none;
+    border: 1px white solid;
+    border-radius: 15px ;
+    padding: 5px 15px ;
+    font-weight: 600;
+    margin-left: 20px;
+}
+#profile_page span.diplome{
+    color: #8c95b4;
+}
+#profile_page .connected_menu-class ul{
+    list-style-type: none;
+    line-height: 50px;
+}
+#profile_page h4{
+    clear: both;
+    margin-top: 80px;
+
+    margin-bottom: 10px;
+}
+
+#profile_page h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+#profile_page .back{
+    position: fixed;
+    right: 0px;
+    top: 95px;
+}
+
+#profile_page .disconnect{
+    position: fixed;
+    right: 10px;
+    top: 35px;
+}
+#profile_page .connected_menu-class a,  #profile_page .back{
+    color: #1a2c6c ;
+    border-width: 0px ;
+    border-radius: 100px 0px 0px 100px;
+    font-size: 16px;
+    font-weight: 700 ;
+    padding-left: 0.7em;
+    background-color: white;
+    padding: 10px;
+    text-decoration: none;
+    border: 1px transparent solid;
+}
+
+#profile_page .connected_menu-class a:hover,  #profile_page .back:hover{
+    background-color: #1a2c6c ;
+    color: white;
+    border: 1px white solid;
+}
+
+#profile_page .back::before{
+    content: "〈";
+    font-size: 1em;
+    margin-right: 15px ;
+    line-height: 1em;
+    font-weight: 900;
+}
+#profile_page .judges-menu{
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    border: solid 1px white;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#profile_page ul.connected_menu-class{
+
+  display: flex;
+  flex-flow: row wrap;
+  box-sizing: border-box;
+}
+#profile_page .connected_menu-class ul > *, #profile_page .connected_menu-class li > * {
+    box-sizing: border-box;
+    display: inline-block;
+
+    flex: auto; 
+
+}
+#profile_page .connected_menu-class ul {
+
+
+}
+#profile_page .menu-item-has-children::before{
+    flex-basis: 100%;
+    width: 0px; 
+    height: 0px; 
+    overflow: hidden;
+    display: block; 
+  }
+#profile_page .menu-item-has-children{
+    display: block; 
+    width: 100%;
+    box-sizing: border-box;
+}
+#profile_page .connected_menu-class a{
+    border-radius: 100px;
+    margin: 20px;
+    min-width: 200px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+#profile_page .connected_menu-class a[href="#"]{
+    background: none;
+    border: none;
+    color: white;
+    cursor: default;
+}
+
+#profile_page .connected_menu-class a[href="#"] +  .sub-menu-toggle{
+    display: none;
+}
+
+
+@media only screen and (max-width: 959px) {
+
+    #profile_page > div{
+        width: 90%;
+    }
+    #profile_page > div.info{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    #profile_page img.profil{
+        display: block;
+        margin: auto;
+        float: none;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    #profile_page h2{
+        font-size: 1.8em;
+    }
+    #profile_page > div label{
+        margin-left: 0px;
+    }
+    #profile_page span{
+       
+        word-break: break-word;
+        width: 100%;
+
+    }
+    #profile_page > div .long label{
+        display: block;
+        margin-bottom: 0px;
+    }
+    #profile_page > div .long span{
+        display: block;
+        margin-left: 0px;
+    }
+    #profile_page .judges-menu{
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        margin-bottom: 20px;
+    }
+    #profile_page .connected_menu-class ul{
+        width: min-content;
+        margin: auto;
+
+    }
+
+    #profile_page .connected_menu-class a[href="#"]{
+        width: max-content;
+    }
+    #profile_page .diplomes{
+        width: min-content;
+    }
+    #profile_page .diplomes{
+        width: min-content;
+    }
+
+    #profile_page a.diplome, #profile_page span.diplome{
+        width: max-content;
+        display: inline-block;
+        margin-bottom: 10px;
+        border-radius: 20px;
+    }
+    #profile_page .back{
+        font-size: 10px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+
+    #profile_page .disconnect{
+        position: absolute;
+    }
+
+    #profile_page h3{
+        font-size: 1.5em;
+    }
+}
+
+
+
+#login-header{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 9999999999999999999999999999999999999;
+}
+
+.admin-bar #login-header{
+    top: 52px;
+}
+
+#login-header a, #profile_page .disconnect{
+    color: white;
+    text-decoration: none;
+    font-family: Fira sans;
+    font-style: italic;
+    display: block;
+    font-weight: bold;
+    font-size:1.3em;
+    text-align: right;
+    background-color: transparent;
+}
+#login-header .benevol, #profile_page .disconnect{
+    margin-top: 15px;
+    border-radius: 30px ;
+    border: solid 1px white;
+    padding: 5px 10px;
+    line-height: 1em;
+    font-size: 0.85em;
+}
+#login-header .benevol{
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media only screen and (max-width: 959px) {
+    #login-header .benevol{
+        display: none;
+    }
+    #login-header.disconnected a{
+        background-image: url("images/account.png");
+        font-size: 0;
+        background-size: 30px 30px;
+        width: 30px;
+        height: 30px;
+    }
+    #login-header.connected a{
+        color:  #1a2c6c;
+    }
+}
+
+#profile_page .disconnect:hover{
+    border-color:1a2c6c;
+    background-color: white;
+    color:  #1a2c6c;
+}
+.wp-admin #login-header, body.page-id-349 #login-header{
+    display: none;
+}
+
+p.connexion-error{
+    text-align: center;
+    margin-top: 400px;
+}

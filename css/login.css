@@ -1,19 +1,81 @@
 .shf-authentication-login {
-    display: inline-block;
+    /*display: inline-block;*/
     width: 100%;
+	height:100%;
+	position: absolute;
+	top: 0px; left: 0px;
+	z-index: 9999;
+	padding-top :200px;
+    background-color: #666;
+    background-blend-mode: hard-light;
+    background-image: url(/wp-content/uploads/2021/07/coding-background-texture.jpg),
+    linear-gradient(180deg,#213b7f 0%,#172655 100%) !important;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: Fira sans;
+    font-style: italic;
 }
 
 .shf-authentication-login {
     display: none;
 }
-
-.shf-authentication-login label, .shf-authentication-login input {
-    display: block;
+.shf-authentication-login h1{
+    text-align: center;
+    font-family: Fira sans;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 1.6em;
+    width: 75%;
     margin: auto;
+    color: white;
 }
 
+.shf-authentication-login form {
+    margin-bottom: 10px;
+    text-align: center;
+    width: 400px;
+    margin: auto;
+}
+.shf-authentication-login  form input{
+    margin-top: 20px;
+}
+.shf-authentication-login label, .shf-authentication-login input {
+   /* display: block;*/
+    margin: auto;
+}
+.shf-authentication-login label {
+    font-weight: bold;
+    width: 200px;
+    display: inline-block;
+    text-align: right;
+    padding-right: 25px;
+}
 .shf-authentication-login input {
     margin-bottom: 20px;
+}
+.shf-authentication-login input[type=text], .shf-authentication-login input[type=password] {
+    line-height: 15px;
+    width: 200px;
+}
+.shf-authentication-login input[type=submit]{
+    border-radius: 30px ;
+    border: solid 1px white;
+    padding: 5px 10px;
+    line-height: 1em;
+    background-color: transparent;
+    color:  white;
+    font-size: 1.1em;
+    cursor: default;
+}
+.shf-authentication-login input[type=submit]:hover{
+    border-color:1a2c6c;
+    background-color: white;
+    color:  #1a2c6c;
+}
+
+.shf-authentication-login .highlighted{
+    margin-bottom: 0;
+    margin-top: 50px;
 }
 
 .shf-authentication-login-in-error {
@@ -23,9 +85,20 @@
 .shf-authentication-login .errors {
     padding: 0;
 }
+.shf-authentication-login .errors li{
+    background-color: white;
+    color: #85031a;
+    font-weight: bold;
+    list-style: none;
+    font-style: none;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 5px;
+    width: max-content;
+}
 
 .shf-authentication-login a {
-    color: white;
+    color: #85031a;
 }
 
 .shf-authentication-login .errors li::before {
@@ -35,9 +108,22 @@
 
 .shf-authentication-login p {
     margin: auto !important;
-    text-align: center;
+    width: max-content;
+    max-width: 75%;
+    font-weight: bold;
 }
 
+.shf-authentication-login .rights{
+    border: 1px solid white;
+    margin: auto;
+    text-align: center;
+    padding: 30px;
+    max-width: 75%;
+}
+
+.shf-authentication-login .rights .text{
+    font-weight: normal;
+}
 .shf-disconnected, .shf-disconnected>* {
     color: lightgray;
     cursor: default;
@@ -52,9 +138,64 @@
     font-size: 1.5em;
     z-index: 99999;
 }
+/*_______________________________________________________________________________________________________________________________*/
+.shf-authentication-login-button {
+/*padding: 5px 20px 5px 20px;*/
+    font-size: 1em;
+    color: #B8905D;
+    cursor: pointer;
+    border-color: #B8905D;
+    border-width: 0px;
+    border-style: solid;
+	background:white;
+}
+.shf-authentication-login-button:hover {
+ /*
+      color: white;
+	background: #B8905D;
+*/
+}
+.shf-authentication-login-button:before{ 
+  content:url("https://etalonsf.fr/wp-content/uploads/z_cadenasferme50.png") ;
+ }
+.shf-authentication-login-button:hover:before{ 
+  content:url("https://etalonsf.fr/wp-content/uploads/z_cadenas50.png") ;
+ }
+
 
 @media only screen and (max-width: 959px) {
     .shf-authentication-login-fixed-button {
         display: none;
+    }
+
+    .shf-authentication-login h1{
+        font-size: 0.8em;
+    }
+
+    .shf-authentication-login {
+        padding-top: 250px;
+    }
+    .shf-authentication-login label{
+        text-align: center;
+        margin-top: 10px;
+        width: 100%;
+        margin-right:0px ;
+        margin-left:0px ;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .shf-authentication-login form input[type=text], .shf-authentication-login form input[type=password]{
+        margin-top: 0px;
+        margin-right:0px ;
+        margin-left:0px ;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .shf-authentication-login .rights{
+        margin-top: 50px;
+    }
+
+    .shf-authentication-login form {
+        width: inherit;
     }
 }

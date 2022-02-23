@@ -5,12 +5,9 @@ class SHFConnector{
     private static $response = null;
     public function isValidLoginPassword($login, $password){
         $connectionStatus = new ConnectionStatus();
-        $isValidAccount = false;
 
         try{
-            $isValidAccount = $this->check($login, $password);
-
-            $connectionStatus->connected = $isValidAccount;
+            $connectionStatus = $this->check($login, $password);
             if(!$connectionStatus->connected){
                 array_push($connectionStatus->errors, $this->getMessageCheckAccount());
             }            
@@ -29,6 +26,7 @@ class SHFConnector{
         return sprintf(__("error.membership", "shf-authentication"), $link, $currentYear-1, $currentYear); 
     }
     private function check($login, $password){
+        $connectionStatus = new ConnectionStatus();
        
         if(SHFConnector::$response == null){
             $client = new \GuzzleHttp\Client();
@@ -53,12 +51,16 @@ class SHFConnector{
 
         $test = json_decode(SHFConnector::$response->getBody());
         if($test->code_retour == 4 && $test->retour == "Utilisateur non adhérent" ){
-            return false;
+            $connectionStatus->connected = false;
+            return $connectionStatus;
         } else if($test->code_retour != 0){
             throw new Exception('user_error');
 
         }
-        return $this->checkMembership($test->utilisateur->adhesions);
+
+        $connectionStatus->connected = $this->checkMembership($test->utilisateur->adhesions);
+        $connectionStatus->id =  $test->utilisateur->numero_shf;
+         return $connectionStatus;
 
     }
 
@@ -77,10 +79,12 @@ class SHFConnector{
 class ConnectionStatus {
     public $connected;
     public $errors;
+    public $id;
 
     function __construct(){
         $this->connected = false;
         $this->errors = [];
+        $this->id = 0;
     }
 }
 ?>

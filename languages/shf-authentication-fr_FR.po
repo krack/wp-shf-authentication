@@ -1,37 +1,97 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: shf-authentication\n"
-"POT-Creation-Date: 2020-03-30 12:31+0200\n"
-"PO-Revision-Date: 2020-03-30 12:36+0200\n"
+"POT-Creation-Date: 2021-10-11 23:12+0200\n"
+"PO-Revision-Date: 2021-10-13 00:23+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: adminPlugin.php:10
+#: adminImportCsvFile.php:32
+msgid "Import "
+msgstr "Import "
+
+#: adminImportCsvFile.php:36
+msgid "File uploaded"
+msgstr "Fichier télécharger"
+
+#: adminImportCsvFile.php:45
+msgid "The file already existing, it will be overrided."
+msgstr "Le fichier existe déjà, il sera surchargé."
+
+#: adminImportCsvFile.php:47
+msgid "Warning : no file uploaded, datas is empty."
+msgstr "Attention: pas de fichier téléchargé, les données sont vide."
+
+#: adminImportCsvFile.php:52
+msgid "Horses"
+msgstr "Chevaux"
+
+#: adminImportCsvFile.php:57
+msgid "Import"
+msgstr "Import"
+
+#: adminImportCsvFile.php:75
+msgid "File type is not csv"
+msgstr "Le type de fichier n'est pas csv"
+
+#: adminImportCsvFile.php:100
+msgid "Empty file"
+msgstr "Fichier vide"
+
+#: adminImportCsvFile.php:130
+msgid "Error during file uploading"
+msgstr "Erreur durant le téléchargement"
+
+#: adminImportCsvFile.php:159
+msgid "File must be encoding in UTF-8"
+msgstr "Le fichier doit être encodé en UTF-8"
+
+#: adminImportCsvFile.php:171
+msgid "Error during copie after file validating"
+msgstr "Erreur durant la copie après la validation du fichier"
+
+#: adminPlugin.php:14
 msgid "SHF authentication settings"
 msgstr "Paramètres de l'authentification SHH"
 
-#: adminPlugin.php:10 adminPlugin.php:25
+#: adminPlugin.php:14 adminPlugin.php:39
 msgid "SHF authentication"
 msgstr "Authentification SHF"
 
-#: adminPlugin.php:28
+#: adminPlugin.php:19
+msgid "juges"
+msgstr "juges"
+
+#: adminPlugin.php:19
+msgid "List of judges for validate authtentification"
+msgstr "Liste des juges pour la validation de l'authentification"
+
+#: adminPlugin.php:21
+msgid "yb"
+msgstr "yb"
+
+#: adminPlugin.php:21
+msgid "List of yb for validate authtentification"
+msgstr "Liste des yb pour la validation de l'authentification"
+
+#: adminPlugin.php:42
 msgid "Secret manager"
 msgstr "Manager de secret"
 
-#: adminPlugin.php:31
+#: adminPlugin.php:45
 msgid "Secret reseted"
 msgstr "Secret réinitialisé"
 
-#: adminPlugin.php:34
+#: adminPlugin.php:48
 msgid ""
 "Warning : with this reset of secret, all connected users need to reconnect "
 "them."
@@ -39,82 +99,329 @@ msgstr ""
 "Attention : avec cet réinitialisation de secret, tous les utilisateurs "
 "devront se reconnecter."
 
-#: adminPlugin.php:36
+#: adminPlugin.php:50
 msgid "Reset secret"
 msgstr "Réinitialisation de secret"
 
-#: adminPlugin.php:43
+#: adminPlugin.php:57
 msgid "SHF connection"
 msgstr "connexion SHF"
 
-#: adminPlugin.php:46
+#: adminPlugin.php:60
 msgid "saved"
 msgstr "sauvegarder"
 
-#: adminPlugin.php:51
+#: adminPlugin.php:65
 msgid "host"
 msgstr "hôte"
 
-#: adminPlugin.php:55
+#: adminPlugin.php:69
 msgid "key-api"
 msgstr "key-api"
 
-#: adminPlugin.php:59
+#: adminPlugin.php:73
 msgid "key-secret"
 msgstr "key-secret"
 
-#: adminPlugin.php:63
+#: adminPlugin.php:77
 msgid "redirect link"
 msgstr "lien de redirection"
 
-#: adminPlugin.php:66
+#: adminPlugin.php:80
 msgid "save"
 msgstr "sauvegarder"
 
-#: shfConnector.php:19
-msgid "login failed"
-msgstr "Identifiant ou Mot de Passe incorrect"
+#: adminPlugin.php:89
+msgid "Shortcode"
+msgstr "Shortcode"
 
-#: shfConnector.php:27
-msgid "error.membership"
+#: adminPlugin.php:91
+msgid "Protected content"
+msgstr "Contenu restreint"
+
+#: adminPlugin.php:93
+msgid ""
+"visible (optionnal): <br />true - display login button if not conntect or no "
+"right <br />false (default)- display nothing if not conntected or no right"
 msgstr ""
-"<a target=\"_blank\" href=\"%s\">Cet espace est réservé aux adhérent Selle "
-"Français %d/%d. Votre adhésion ne semble pas être à jour. Cliquez-ici pour "
-"découvrir les avantages et la démarche.</a>"
+"visible (optionnel): <br />true - affiche un boutton de connexion si "
+"l'utilisateur n'est pas connecté ou n'a pas les droits <br />false (defaul)- "
+"n'affiche rien si l'utilisateur n'est pas connecté ou n'a pas les droits"
 
-#: template/connectionFixedButton.php:2
-#, fuzzy
-#| msgid "Connection"
-msgid "Connexion"
-msgstr "Connexion"
+#: adminPlugin.php:94
+msgid ""
+"right (optionnal): <br />judge - the Protected content, need user with right "
+"judge to be see<br />yb - the Protected content, need user with yb judge to "
+"be see<br />default - the Protected content, need user just to be connected "
+"of shf."
+msgstr ""
+"right (optionnel): <br />judge - le Contenu protégé a besoin d'un "
+"utilisateur avec le droit \"judge\" pour être vu<br />yb - le Contenu "
+"protégé a besoin d'un utilisateur avec le droit \"yb\" pour être vu<br /"
+">default - le Contenu protégé a juste besoin d'un utilisateur connecté pour "
+"être vu."
 
-#: template/connectionMessage.php:2
+#: adminPlugin.php:97
+msgid "Medias name"
+msgstr "Noms des médias"
+
+#: adminPlugin.php:99
+msgid "Adding wordpress medias for profile"
+msgstr "Ajouts des médias Wordpress pour les profils"
+
+#: adminPlugin.php:102 adminPlugin.php:113 adminPlugin.php:128
+msgid "Example"
+msgstr "Exemple"
+
+#: adminPlugin.php:107
+msgid "Add a profile photo"
+msgstr "Ajoute d'une photo de profile"
+
+#: adminPlugin.php:108 adminPlugin.php:120
+msgid "user id"
+msgstr "id utilisateur"
+
+#: adminPlugin.php:110 adminPlugin.php:122
+msgid "user id is is value of columne 'id' in imported csv file."
+msgstr ""
+"l'id utilisateur est la valeur de la colonne 'id' dans le fichier csv "
+"importer."
+
+#: adminPlugin.php:114
+msgid "user profile photo"
+msgstr "photo de profil utilisateur"
+
+#: adminPlugin.php:119
+msgid "Add a diploma"
+msgstr "Ajout d'un diplome"
+
+#: adminPlugin.php:125
+msgid "use field \"legend\" to define title of diplome"
+msgstr ""
+"utilisé le champs \"légende\" du média pour définir le titre du diplome"
+
+#: adminPlugin.php:129
+msgid "one diplome of user"
+msgstr "un diplome de l'utilistateur"
+
+#: csvReader.php:41 csvReader.php:95
+msgid "File opening impossible"
+msgstr "Impossible d'ouvrir le fichier"
+
+#: csvReader.php:51
+#, php-format
+msgid "File invalid : separator char must be %s"
+msgstr "Fichier invalide : le séparator doit être %s"
+
+#: csvReader.php:62
+#, php-format
+msgid ""
+"File invalid row %u with data %s : bad field number : actual %u, excepted %u"
+msgstr ""
+"Fichier invalide ligne %u avec la donnée %s : mauvais numbre de champs : "
+"actuel %u, attendu %u"
+
+#: index.php:72 index.php:176
 msgid "Log in<br /> to learn more"
 msgstr ""
 "Connectez-vous<br />\n"
 "pour en savoir plus"
 
-#: template/loginForm.php:2 template/loginForm.php:20
-msgid "Connection"
+#: index.php:233
+msgid "Connected menu judges"
+msgstr "Menu connecté juges"
+
+#: index.php:234
+msgid "Connected menu Yb"
+msgstr "Menu connecté Yb"
+
+#: shfConnector.php:16
+msgid "login failed"
+msgstr "Identifiant ou Mot de Passe incorrect"
+
+#: shfConnector.php:26
+msgid "error.membership"
+msgstr ""
+"<a target=\"_blank\" href=\"%s\">Votre adhésion ne semble pas être à jour, "
+"veuillez contacter le Stud-Book.</a>"
+
+#: template/connectionFixedButton.php:2
+msgid "Connexion"
 msgstr "Connexion"
 
-#: template/loginForm.php:5
+#: template/loginForm.php:19
 msgid ""
-"Thanks to your Selle Français membership, benefit from the full expertise of "
-"the experts as well as photos and videos of the stallions by logging in with "
-"your SHF credentials."
+"This part is reserved for judges who are members or members of the Young "
+"Breeders program.<br />Access your profile with your SHF or Young Breeders "
+"ID."
 msgstr ""
-"Grâce à votre adhésion Selle Français, bénéficiez de l'expertise complète "
-"des experts ainsi que des photos et vidéos des étalons en vous connectant "
-"avec vos identifiants SHF."
+"Cette partie est réservée aux juges adhérents ou membres du programme Young "
+"Breeders.<br />Accédez à votre profil avec votre identifiant SHF ou Young "
+"Breeders."
 
-#: template/loginForm.php:13
+#: template/loginForm.php:28
 msgid "Login"
 msgstr "Identifiant"
 
-#: template/loginForm.php:17
+#: template/loginForm.php:32
 msgid "Password"
 msgstr "Mot de passe"
+
+#: template/loginForm.php:35
+msgid "Connection"
+msgstr "Connexion"
+
+#: template/loginForm.php:44
+msgid "Once connected, benefit from additional content!"
+msgstr "Une fois connecté, bénéficiez de contenus supplémentaires !"
+
+#: template/user-detail.php:14
+msgid ""
+"This part is reserved for SF member judges.<br /> Access your Judge profile "
+"by logging in below with your \"SHF member\" credentials."
+msgstr ""
+"Cette partie est réservée aux Juges adhérents SF. <br />Accédez à votre "
+"profil Juge en vous connectant ci-dessous avec vos identifiants \"adhérent "
+"SHF\"."
+
+#: template/user-detail.php:16
+msgid ""
+"This part is reserved for Young Breeders and partner schools.<br /> Access "
+"your Young Breeders / École profile by logging in below with your \"SHF "
+"member \" or provisional Young Breeders credentials provided by the Selle "
+"Français if you are not yet a member."
+msgstr ""
+"Cette partie est réservée aux Young Breeders et écoles partenaires. <br /"
+">Accédez à votre profil Young Breeders / École en vous connectant ci-dessous "
+"avec vos identifiants \"adhérent SHF\" ou Young Breeders provisoires fournis "
+"par le Selle Français si vous n'êtes pas encore adhérent."
+
+#: template/user-detail.php:30
+msgid "Disconnect"
+msgstr "Déconnexion"
+
+#: template/user-detail.php:32
+msgid "Return to the website"
+msgstr "Revenir au site"
+
+#: template/user-detail.php:34
+msgid "My profile"
+msgstr "Mon profil"
+
+#: template/user-detail.php:54
+msgid "lastname"
+msgstr "nom"
+
+#: template/user-detail.php:58
+msgid "firstame"
+msgstr "prénom"
+
+#: template/user-detail.php:65
+msgid "Phone"
+msgstr "téléphone"
+
+#: template/user-detail.php:72
+msgid "email"
+msgstr "mail"
+
+#: template/user-detail.php:79
+msgid "Establishment"
+msgstr "Etablissement"
+
+#: template/user-detail.php:89
+msgid "address"
+msgstr "adresse"
+
+#: template/user-detail.php:99
+msgid "Home region"
+msgstr "Région de rattachement"
+
+#: template/user-detail.php:110
+msgid "website"
+msgstr "Site internet"
+
+#: template/user-detail.php:118
+msgid "Membership number"
+msgstr "N° adhérent"
+
+#: template/user-detail.php:123
+msgid "Awaiting membership"
+msgstr "En attente d’adhésion"
+
+#: template/user-detail.php:131
+msgid "level"
+msgstr "niveau"
+
+#: template/user-detail.php:171
+msgid "Diplomes"
+msgstr "Diplômes"
+
+#: template/user-detail.php:173
+msgid "Departemental judge"
+msgstr "Juge départemental"
+
+#: template/user-detail.php:174
+msgid "Regionnal judge"
+msgstr "Juge régionnal"
+
+#: template/user-detail.php:175
+msgid "Nationnal judge"
+msgstr "Juge nationnal"
+
+#: template/user-detail.php:186
+msgid "My judge access"
+msgstr "Mes accès juges"
+
+#: template/user-detail.php:190
+msgid "Online training"
+msgstr "Perfectionnement en ligne"
+
+#~ msgid "Shf account"
+#~ msgstr "Compte SHF"
+
+#~ msgid "Contact(s)"
+#~ msgstr "Contact(s)"
+
+#~ msgid "Selles Français judges and members of the Yound Breeders program:"
+#~ msgstr "Juges Selles Français et membres du programme Young Breeders :"
+
+#~ msgid ""
+#~ "Your connection gives you immediate access to your personal profile. Once "
+#~ "logged in, click on \"my profile\" at the top right of your screen."
+#~ msgstr ""
+#~ "Votre connexion vous donne un accès immédiat à votre profil personnel."
+#~ "<br />\n"
+#~ " Une fois connecté, cliquez sur \"mon profil\" en haut à droite de votre "
+#~ "écran."
+
+#~ msgid "Access all content thanks to your Selle Français membership!"
+#~ msgstr ""
+#~ "Accédez à l'ensemble du contenu avec votre identifiant SHF ou Young "
+#~ "Breeders !"
+
+#~ msgid "Log in with your SHF ID"
+#~ msgstr "Connectez-vous avec votre identifiant SHF"
+
+#~ msgid ""
+#~ "Thanks to your Selle Français membership, benefit from the full expertise "
+#~ "of the experts as well as photos and videos of the stallions by logging "
+#~ "in with your SHF credentials."
+#~ msgstr ""
+#~ "Grâce à votre adhésion Selle Français, bénéficiez de l'expertise complète "
+#~ "des experts ainsi que des photos et vidéos des étalons en vous connectant "
+#~ "avec vos identifiants SHF."
+
+#~ msgid "Judge "
+#~ msgstr "Juge"
+
+#~ msgid "to Download"
+#~ msgstr "à télécharger"
+
+#~ msgid "Improve myself online : "
+#~ msgstr "Me perfectionner en ligne : "
+
+#~ msgid "Page forbidden"
+#~ msgstr "Page interdite"
 
 #~ msgid ""
 #~ "<a target=\"_blank\" href=\"%s\">Check your membership to the Selle "
@@ -132,9 +439,6 @@ msgstr "Mot de passe"
 #~ "your shf account</a>"
 #~ msgstr ""
 #~ "<a href=\"%s\">Vérifiez votre adhésion au Stud Book Selle Français</a>"
-
-#~ msgid "Restricted content"
-#~ msgstr "Contenu restreint"
 
 #~ msgid "This content required a SHF valid subscribe for selle Francais."
 #~ msgstr ""

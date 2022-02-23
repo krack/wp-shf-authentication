@@ -46,3 +46,7 @@
 .wp-shf-authentication-plugin-admin input[type=submit] {
     margin-top: 10px;
 }
+
+.wp-admin #login-header{
+    display: none;
+}
